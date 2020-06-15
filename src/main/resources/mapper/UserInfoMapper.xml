@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rainbow.blog.mapper.UserInfoDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.rainbow.blog.entity.UserInfo">
+        <id column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="avatar_url" property="avatarUrl" />
+        <result column="phone" property="phone" />
+        <result column="mail" property="mail" />
+        <result column="password" property="password" />
+        <result column="created_time" property="createdTime" />
+        <result column="updated_time" property="updatedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, user_name, avatar_url, phone, mail, password, created_time, updated_time
+    </sql>
+
+</mapper>

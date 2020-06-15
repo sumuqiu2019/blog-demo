@@ -1,0 +1,14 @@
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#logging:
+#  level:
+#    com.rainbow.blog.mapper: debug
+
+logging:
+  level:
+    root: info
+
+
+
