@@ -1,11 +1,11 @@
-package com.rainbow.blog.commons.utils;
+package com.rainbow.blog.utils;
 
 import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.OSSException;
 import com.aliyun.oss.model.*;
-import com.rainbow.blog.config.OSSConfig;
+import com.rainbow.blog.config.oss.OSSConfig;
 
 import java.io.File;
 import java.io.FileInputStream;

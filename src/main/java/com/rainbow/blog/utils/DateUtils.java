@@ -1,4 +1,4 @@
-package com.rainbow.blog.commons.utils;
+package com.rainbow.blog.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

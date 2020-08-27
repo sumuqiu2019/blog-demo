@@ -1,4 +1,4 @@
-package com.rainbow.blog.commons.utils;
+package com.rainbow.blog.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 

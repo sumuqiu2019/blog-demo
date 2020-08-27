@@ -1,4 +1,4 @@
-package com.rainbow.blog.config;
+package com.rainbow.blog.config.oss;
 
 import lombok.Data;
 

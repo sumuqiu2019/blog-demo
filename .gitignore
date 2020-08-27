@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
-
+application.properties
+oss.properties
 # Log file
 *.log
 
