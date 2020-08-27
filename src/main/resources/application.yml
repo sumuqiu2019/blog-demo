@@ -12,3 +12,5 @@ logging:
 
 
 
+server:
+  port: 10000

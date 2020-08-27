@@ -1,9 +1,7 @@
 package com.rainbow.blog.service;
 
-import com.rainbow.blog.commons.bean.PageVo;
-import com.rainbow.blog.commons.bean.QueryCondition;
-import com.rainbow.blog.entity.Documentation;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.rainbow.blog.entity.Documentation;
 
 /**
  * <p>
@@ -15,6 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface DocumentationService extends IService<Documentation> {
 
-    PageVo queryPage(QueryCondition params);
+
 
 }
