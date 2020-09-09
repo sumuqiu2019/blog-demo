@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>jquery根据文章h标签自动生成导航目录</title>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        #content{padding-right:102px;}
+        .menu{width:90px; background:#fff; border:1px #32c6c6 solid; border-radius:4px; position:fixed; right:0; padding:0 6px;}
+        .menu a{width:100%; height:30px; line-height:30px; display:inline-block;}
+    </style>
+    <script>
+        $(document).ready(function(e) {
+            $("#content").children().each(function(index, element) {
+                var tagName=$(this).get(0).tagName;
+                if(tagName.substr(0,1).toUpperCase()=="H"){
+                    var contentH=$(this).html();//获取内容
+                    var markid="mark-"+tagName+"-"+index.toString();
+                    $(this).attr("id",markid);//为当前h标签设置id
+                    var str = "";
+                    switch (tagName) {
+                        case "H1":
+                            str = "-";
+                            break;
+                        case "H2":
+                            str = "--";
+                            break;
+                        case "H3":
+                            str = "---";
+                            break;
+                        case "H4":
+                            str = "----";
+                            break;
+                        case "H5":
+                            str = "-----";
+                            break;
+                        case "H6":
+                            str = "------";
+                            break;
+                    }
+                    console.log("str-->"+str)
+                    $(".menu").append("<a href='#"+markid+"'>"+str+contentH+"</a>");//在目标DIV中添加内容
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+<div class="menu"></div>
+<div id="content">
+    一路黔行，醉美贵州——黔西南、黔南游记
+    <h2>摘要</h2>
+    <div style="height:800px;">
+        第一天抵达贵阳后，先游青岩古镇，后品酸汤鱼 宿：贵阳；第二天白天游览安顺黄果树后，晚上至黔西南州兴义入住；第三天游览完万峰林和马岭河大峡谷，返回安顺；第四天火车前往荔波游览，晚上住小七孔；第五天上午继续游玩小七孔，下午回到贵阳，晚上航班离开贵州。五天的贵州之行，完全采取坐火车坐班车的旅行方式，安排紧凑，由于第一次来到贵州，黄果树景区之大超出预期，加上火车晚点以及班车停开，虽最终均按计划走完行程，其中的曲曲折折，还是留下深刻的教训
+    </div>
+    <h3>第1天</h3>
+    <div style="height:800px;">第1天内容</div>
+    <h3>第2天</h3>
+    <div style="height:800px;">第2天内容</div>
+    <h3>第3天</h3>
+    <div style="height:800px;">第3天内容</div>
+    <h3>第4天</h3>
+    <div style="height:800px;">第4天内容</div>
+    <h3>第5天</h3>
+    <div style="height:800px;">第5天内容</div>
+</div>
+</body>
+</html>

@@ -18,8 +18,11 @@ import lombok.*;
 @AllArgsConstructor
 public class LoginInfoOutput {
 
+    @ApiModelProperty(value = "id")
+    private Long id;
+
     @ApiModelProperty(value = "用户名")
-    private String userName;
+    private String username;
 
     @ApiModelProperty(value = "头像")
     private String avatar;

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan("com.rainbow.blog.mapper")
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.rainbow.blog.*")
 public class BlogApplication {
 
     public static void main(String[] args) {

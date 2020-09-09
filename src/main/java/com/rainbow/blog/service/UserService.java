@@ -1,6 +1,8 @@
 package com.rainbow.blog.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.rainbow.blog.dto.input.LoginInfoInput;
+import com.rainbow.blog.dto.output.LoginInfoOutput;
 import com.rainbow.blog.entity.User;
 
 /**
@@ -14,5 +16,10 @@ import com.rainbow.blog.entity.User;
 public interface UserService extends IService<User> {
 
 
-
+    /**
+     * 用户登录
+     * @param loginInfoInput
+     * @return
+     */
+    User login(LoginInfoInput loginInfoInput);
 }

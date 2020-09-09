@@ -9,31 +9,43 @@ import lombok.ToString;
  * @date 2020/08/27
  */
 @ToString
-public class MyException extends RuntimeException{
+public class MyException extends RuntimeException {
 
     private Integer code = 500;
     private String msg;
     private String url;
-    public MyException(String msg,String url) {
+
+    public MyException(String msg) {
+        super(msg);
+        this.msg = msg;
+    }
+
+    public MyException(Integer code, String msg) {
+        super(msg);
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public MyException(String msg, String url) {
         super(msg);
         this.msg = msg;
         this.url = url;
     }
 
-    public MyException(String msg, Throwable e,String url) {
+    public MyException(String msg, Throwable e, String url) {
         super(msg, e);
         this.msg = msg;
         this.url = url;
     }
 
-    public MyException(String msg, int code,String url) {
+    public MyException(String msg, int code, String url) {
         super(msg);
         this.msg = msg;
         this.code = code;
         this.url = url;
     }
 
-    public MyException(String msg, int code, Throwable e,String url) {
+    public MyException(String msg, int code, Throwable e, String url) {
         super(msg, e);
         this.msg = msg;
         this.code = code;

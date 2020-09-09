@@ -34,6 +34,7 @@ public class Resp<T> {
      */
     @ApiModelProperty("请求返回参数")
     private T data;
+
     public Resp(Integer code, String msg, T data) {
         this.code = code;
         this.msg = msg;
@@ -47,14 +48,26 @@ public class Resp<T> {
         this.data = data;
     }
 
-    public static<T> Resp<T> ok(T data){
+    public static <T> Resp<T> ok(T data) {
         Resp<T> resp = new Resp<T>(data);
         resp.setCode(200);
         resp.setMsg("操作成功");
         return resp;
     }
 
-    public static<T> Resp<T> fail(){
+    public static <T> Resp<T> res(boolean success) {
+        Resp<T> resp = new Resp<T>();
+        resp.setCode(200);
+        resp.setMsg("操作成功");
+        if (!success) {
+            resp.setCode(400);
+            resp.setSuccess(false);
+            resp.setMsg("操作失败");
+        }
+        return resp;
+    }
+
+    public static <T> Resp<T> fail() {
         Resp<T> resp = new Resp<T>();
         resp.setCode(400);
         resp.setSuccess(false);
@@ -62,12 +75,12 @@ public class Resp<T> {
         return resp;
     }
 
-    public Resp<T> msg(String msg){
+    public Resp<T> msg(String msg) {
         this.setMsg(msg);
         return this;
     }
 
-    public Resp<T> code(Integer code){
+    public Resp<T> code(Integer code) {
         this.setCode(code);
         return this;
     }

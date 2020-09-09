@@ -11,6 +11,5 @@ logging:
     root: info
 
 
-
 server:
   port: 10000
